@@ -1,0 +1,14 @@
+.faqList1-01 {
+  li {
+    @extend %padd--4;
+    margin-bottom: 4px;
+    background-color: #ccc;
+  }
+
+  .faqList1-01_title {
+    @extend %font--bold;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+
+}
