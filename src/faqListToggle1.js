@@ -19,8 +19,10 @@ const faqList1_01 = {
   toggleContent: function () {
     const x = this.nextElementSibling;
     if (x.style.display === "none") {
+      this.className += " fq";  
       x.style.display = "block";
     } else {
+      this.className = "faqList1-01_title";  
       x.style.display = "none";
     }
   },
