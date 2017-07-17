@@ -1,32 +1,32 @@
 import "./js/vendor/polyfill_nextElementSibling.js";
 
 const faqList1_01 = {
-  init: function(list) {
+  init: function (list) {
     this.addEventListener();
-    this.hideAllContents(list)
-    list.faqList1_01_EL("click", this.toggleContents);
+    this.toggleAllContents(list, "none");
+    list.faqList1_01_EL("click", this.toggleContent);
   },
-  addEventListener: function() {
-    NodeList.prototype.faqList1_01_EL = function(event, func) {
-    this.forEach(function(content, item) {
-       content.addEventListener(event, func);
-    });
-    }
+  addEventListener: function () {
+    NodeList.prototype.faqList1_01_EL = function (event, func) {
+      this.forEach(function (content, item) {
+        content.addEventListener(event, func);
+      });
+    };
   },
-  getElements: function(selector) {
-    return document.querySelectorAll(selector);
+  getElements: function (elmSel) {
+    return document.querySelectorAll(elmSel);
   },
-  toggleContents: function() {
+  toggleContent: function () {
     const x = this.nextElementSibling;
     if (x.style.display === "none") {
-    x.style.display = "block"
+      x.style.display = "block";
     } else {
-    x.style.display = "none"
-    }  
+      x.style.display = "none";
+    }
   },
-  hideAllContents: function(list) {
+  toggleAllContents: function (list, display) {
     for (let i of list) {
-      i.nextElementSibling.style.display = 'none';
+      i.nextElementSibling.style.display = display;
     }
   }
 };
