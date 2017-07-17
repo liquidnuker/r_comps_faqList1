@@ -1,7 +1,6 @@
 import "./js/vendor/polyfill_nextElementSibling.js";
 
 const faqList1_01 = {
-  showContents: true,
   init: function(list) {
     this.addEventListener();
     this.hideAllContents(list)
@@ -18,13 +17,12 @@ const faqList1_01 = {
     return document.querySelectorAll(selector);
   },
   toggleContents: function() {
-    faqList1_01.showContents = !faqList1_01.showContents;
     const x = this.nextElementSibling;
-    if (!faqList1_01.showContents) {
-      x.style.display = 'block';
+    if (x.style.display === "none") {
+    x.style.display = "block"
     } else {
-      x.style.display = 'none';
-    }
+    x.style.display = "none"
+    }  
   },
   hideAllContents: function(list) {
     for (let i of list) {
