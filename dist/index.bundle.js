@@ -76,8 +76,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-// faqList1_01.init(".faqList1-01_title");
-
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
@@ -98,65 +96,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
-var faqList1_01 = function () {
-  function init(list) {
-    list = document.querySelectorAll(list);
-    addEvents();
-    toggleAllContents(list, "none");
-    list.faqList1_01_EL("click", toggleContent);
-  }
+// const faqList1_01 = (function () {
+//   function init(list) {
+//     list = document.querySelectorAll(list);
+//     addEvents();
+//     toggleAllContents(list, "none");
+//     list.faqList1_01_EL("click", toggleContent);
+//   }
 
-  function addEvents() {
-    NodeList.prototype.faqList1_01_EL = function (event, func) {
-      this.forEach(function (content, item) {
-        content.addEventListener(event, func);
-      });
-    };
-  }
+//   function addEvents() {
+//     NodeList.prototype.faqList1_01_EL = function (event, func) {
+//       this.forEach(function (content, item) {
+//         content.addEventListener(event, func);
+//       });
+//     };
+//   }
 
-  function toggleContent() {
-    var x = this.nextElementSibling;
+//   function toggleContent() {
+//     const x = this.nextElementSibling;
 
-    if (x.style.display === "none") {
-      this.className += " fq";
-      x.style.display = "block";
-    } else {
-      this.className = "faqList1-01_title";
-      x.style.display = "none";
-    }
-  }
+//     if (x.style.display === "none") {
+//       this.className += " fq";  
+//       x.style.display = "block";
+//     } else {
+//       this.className = "faqList1-01_title";  
+//       x.style.display = "none";
+//     }
+//   }
 
-  function toggleAllContents(list, display) {
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+//   function toggleAllContents(list, display) {
+//     for (let i of list) {
+//       i.nextElementSibling.style.display = display;
+//     }
+//   }
 
-    try {
-      for (var _iterator = list[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var i = _step.value;
-
-        i.nextElementSibling.style.display = display;
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  }
-
-  return {
-    init: init
-  };
-}();
+//   return {
+//     init: init
+//   };
+// })();
 
 // export {faqList1_01};
 
@@ -173,8 +150,60 @@ var FaqList1_01 = function () {
   _createClass(FaqList1_01, [{
     key: "init",
     value: function init() {
-      console.log(this.listSelector);
-      console.log(document.querySelectorAll(this.listSelector));
+      var list = document.querySelectorAll(this.listSelector);
+      this.addEvents();
+      this.toggleAllContents(list, "none");
+      list.faqList1_01_EL("click", this.toggleContent);
+    }
+  }, {
+    key: "addEvents",
+    value: function addEvents() {
+      NodeList.prototype.faqList1_01_EL = function (event, func) {
+        this.forEach(function (content) {
+          content.addEventListener(event, func);
+        });
+      };
+    }
+  }, {
+    key: "toggleContent",
+    value: function toggleContent() {
+      var x = this.nextElementSibling;
+
+      if (x.style.display === "none") {
+        this.className += " fq";
+        x.style.display = "block";
+      } else {
+        this.className = "faqList1-01_title";
+        x.style.display = "none";
+      }
+    }
+  }, {
+    key: "toggleAllContents",
+    value: function toggleAllContents(list, display) {
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = list[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var i = _step.value;
+
+          i.nextElementSibling.style.display = display;
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
     }
   }]);
 

@@ -25,7 +25,7 @@ time, mark, audio, video {
 .faqList1-01 li {
   padding: 4px; }
 
-.faqList1-01 .faqList1-01_title {
+.faqList1-01_title {
   font-weight: bold; }
 
 *,
@@ -782,7 +782,7 @@ body {
   margin-bottom: 4px;
   background-color: #ccc; }
 
-.faqList1-01 .faqList1-01_title {
+.faqList1-01_title {
   margin-bottom: 4px;
   cursor: pointer; }
 
