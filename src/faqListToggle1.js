@@ -39,4 +39,22 @@ const faqList1_01 = (function () {
   };
 })();
 
-export {faqList1_01};
+// export {faqList1_01};
+
+class FaqList1_01 {
+  constructor(opts) {
+    this.listSelector = opts.listSelector;
+  }
+
+  // prototypes
+  init() {
+    console.log(this.listSelector);
+    console.log(document.querySelectorAll(this.listSelector));
+  }
+}
+
+let FL1_01 = new FaqList1_01({
+  listSelector: ".faqList1-01_title"
+});
+
+FL1_01.init();
