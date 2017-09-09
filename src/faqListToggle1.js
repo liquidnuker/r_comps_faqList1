@@ -1,80 +1,52 @@
 import "./js/vendor/polyfill_nextElementSibling.js";
 
-// const faqList1_01 = (function () {
-//   function init(list) {
-//     list = document.querySelectorAll(list);
-//     addEvents();
-//     toggleAllContents(list, "none");
-//     list.faqList1_01_EL("click", toggleContent);
-//   }
-
-//   function addEvents() {
-//     NodeList.prototype.faqList1_01_EL = function (event, func) {
-//       this.forEach(function (content, item) {
-//         content.addEventListener(event, func);
-//       });
-//     };
-//   }
-
-//   function toggleContent() {
-//     const x = this.nextElementSibling;
-
-//     if (x.style.display === "none") {
-//       this.className += " fq";  
-//       x.style.display = "block";
-//     } else {
-//       this.className = "faqList1-01_title";  
-//       x.style.display = "none";
-//     }
-//   }
-
-//   function toggleAllContents(list, display) {
-//     for (let i of list) {
-//       i.nextElementSibling.style.display = display;
-//     }
-//   }
-
-//   return {
-//     init: init
-//   };
-// })();
-
-// export {faqList1_01};
-
 class FaqList1_01 {
   constructor(opts) {
     this.listSelector = opts.listSelector;
+    this.iconSelector = opts.iconSelector;
+    this.hiddenFaqClass = opts.hiddenFaqClass;
+    this.visibleFaqClass = opts.visibleFaqClass;
+    this.iconHide = opts.iconHide;
+    this.iconReveal = opts.iconReveal;
   }
 
   // prototypes
   init() {
-    let list = document.querySelectorAll(this.listSelector);
-    this.addEvents();
-    this.toggleAllContents(list, "none");
-    list.faqList1_01_EL("click", this.toggleContent);
-  }
+    let list = document.querySelectorAll("." + this.listSelector);
+    let listArr = Array.prototype.slice.call(list);
 
-  addEvents() {
-    NodeList.prototype.faqList1_01_EL = function (event, func) {
-      this.forEach(function (content) {
-        content.addEventListener(event, func);
+    let icons = document.querySelectorAll("." + this.iconSelector);
+    let iconArr = Array.prototype.slice.call(icons);
+    
+    let self = this;
+    listArr.forEach(function (i, index, array) {
+      i.addEventListener("click", function () {
+        self.toggleContent(index, array, iconArr);
       });
-    };
+    });
+
+    this.toggleAllContents(list, "none", iconArr);
   }
 
-  toggleContent() {
-    const x = this.nextElementSibling;
+  toggleContent(index, array, iconArr) {
+    const faqContent = array[index].nextElementSibling;
 
-    if (x.style.display === "none") {
-      this.className += " fq";
-      x.style.display = "block";
+    if (faqContent.style.display === "none") {
+      array[index].className += this.hiddenFaqClass;
+      faqContent.style.display = "block";
+      iconArr[index].textContent = this.iconHide;
     } else {
-      this.className = "faqList1-01_title";
-      x.style.display = "none";
+      array[index].className = this.visibleFaqClass;
+      faqContent.style.display = "none";
+      iconArr[index].textContent = this.iconReveal;
     }
   }
 
-  toggleAllContents(list, display) {
+  toggleAllContents(list, display, iconArr) {
+    for (let i in iconArr) {
+      iconArr[i].textContent = this.iconReveal;
+    }
+
     for (let i of list) {
       i.nextElementSibling.style.display = display;
     }
@@ -82,7 +54,12 @@ class FaqList1_01 {
 }
 
 let FL1_01 = new FaqList1_01({
-  listSelector: ".faqList1-01_title"
+  listSelector: "faqList1-01_title",
+  iconSelector: "icon",
+  visibleFaqClass: "faqList1-01_title",
+  hiddenFaqClass: " fq",
+  iconReveal: "+",
+  iconHide: "-"
 });
 
 FL1_01.init();

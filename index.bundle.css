@@ -786,12 +786,6 @@ body {
   margin-bottom: 4px;
   cursor: pointer; }
 
-.faqList1-01_title::after {
-  content: '+'; }
-
-.fq::after {
-  content: '-'; }
-
 [class|="col"] {
   position: relative;
   min-height: 1px;
