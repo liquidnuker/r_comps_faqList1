@@ -182,7 +182,7 @@ var FaqList1_01 = function () {
 
 var FL1_01 = new FaqList1_01({
   listSelector: "faqList1-01_title",
-  iconSelector: "icon",
+  iconSelector: "faqList1-01_icon",
   visibleFaqClass: "faqList1-01_title",
   hiddenFaqClass: " fq",
   iconReveal: "+",

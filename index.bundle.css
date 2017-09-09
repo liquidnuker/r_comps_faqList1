@@ -6,6 +6,9 @@
   .row:after {
     clear: both; }
 
+.faqList1-01_icon {
+  display: inline-block; }
+
 input, textarea, select, html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,7 +25,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0; }
 
-.faqList1-01 li {
+.faqList1-01 li, .faqList1-01_icon {
   padding: 4px; }
 
 .faqList1-01_title {
@@ -779,12 +782,20 @@ body {
     width: 8.33333333%; } }
 
 .faqList1-01 li {
-  margin-bottom: 4px;
-  background-color: #ccc; }
+  background-color: #ccc;
+  margin-bottom: 4px; }
+  .faqList1-01 li:last-of-type {
+    margin-bottom: 0; }
 
 .faqList1-01_title {
   margin-bottom: 4px;
   cursor: pointer; }
+
+.faqList1-01_icon {
+  margin-left: 4px;
+  border-radius: 4px;
+  background-color: #000;
+  color: #fff; }
 
 [class|="col"] {
   position: relative;
