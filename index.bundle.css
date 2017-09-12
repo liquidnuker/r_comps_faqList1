@@ -25,7 +25,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0; }
 
-.faqList1-01 li, .faqList1-01_icon {
+.faqList1-01_title, .faqList1-01_ans {
   padding: 4px; }
 
 .faqList1-01_title {
@@ -782,20 +782,25 @@ body {
     width: 8.33333333%; } }
 
 .faqList1-01 li {
+  padding-bottom: 4px;
   background-color: #ccc;
   margin-bottom: 4px; }
   .faqList1-01 li:last-of-type {
     margin-bottom: 0; }
 
 .faqList1-01_title {
+  background-color: #666;
   margin-bottom: 4px;
   cursor: pointer; }
 
 .faqList1-01_icon {
-  margin-left: 4px;
-  border-radius: 4px;
-  background-color: #000;
-  color: #fff; }
+  margin-left: 4px; }
+  .faqList1-01_icon svg {
+    display: inline-block;
+    background-color: #000;
+    fill: #fff;
+    width: 16px;
+    height: 16px; }
 
 [class|="col"] {
   position: relative;

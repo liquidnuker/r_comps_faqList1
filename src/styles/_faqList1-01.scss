@@ -1,30 +1,9 @@
 // faqList1-01
 // ==================================================/
-@mixin faqList1-01() {
-  // background-color: #000; 
-}
-
-@mixin faqList1-01_list() {
-  background-color: #ccc;  
-}
-
-@mixin faqList1-01_title() {
-  @extend %font--bold;
-  margin-bottom: 4px; 
-}
-
-@mixin faqList1-01_icon() {
-  @extend %padd--4;
-  margin-left: 4px;
-  border-radius: 4px;
-  background-color: #000;
-  color: #fff;
-}
-
 .faqList1-01 {
   li {
-    @extend %padd--4;
-    @include faqList1-01_list();
+    padding-bottom: 4px;
+    background-color: #ccc;  
     margin-bottom: 4px;
     
     &:last-of-type {
@@ -34,11 +13,26 @@
 }
 
 .faqList1-01_title {
-  @include faqList1-01_title();
+  @extend %font--bold;
+  @extend %padd--4;
+  background-color: #666;
+  margin-bottom: 4px; 
   cursor: pointer;
 }
 
 .faqList1-01_icon {
   @extend %display--inline-block;
-  @include faqList1-01_icon();
+  margin-left: 4px;
+  
+  svg {
+    display: inline-block;
+    background-color: #000;
+    fill: #fff;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.faqList1-01_ans {
+  @extend %padd--4;
 }

@@ -30,21 +30,21 @@ class FaqList1_01 {
 
   toggleContent(index, array, iconArr) {
     const faqContent = array[index].nextElementSibling;
-
+    
     if (faqContent.style.display === "none") {
       array[index].className += this.hiddenFaqClass;
       faqContent.style.display = "block";
-      iconArr[index].textContent = this.iconHide;
+      iconArr[index].innerHTML = this.iconHide;
     } else {
       array[index].className = this.visibleFaqClass;
       faqContent.style.display = "none";
-      iconArr[index].textContent = this.iconReveal;
+      iconArr[index].innerHTML = this.iconReveal;
     }
   }
 
   toggleAllContents(list, display, iconArr) {
     for (let i in iconArr) {
-      iconArr[i].textContent = this.iconReveal;
+      iconArr[i].innerHTML = this.iconReveal;
     }
 
     for (let i of list) {
@@ -58,8 +58,11 @@ let FL1_01 = new FaqList1_01({
   iconSelector: "faqList1-01_icon",
   visibleFaqClass: "faqList1-01_title",
   hiddenFaqClass: " fq",
-  iconReveal: "+",
-  iconHide: "-"
+  iconReveal: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+  </svg>`,
+  iconHide: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path d="M19 13H5v-2h14v2z"/></svg>`
 });
 
 FL1_01.init();
