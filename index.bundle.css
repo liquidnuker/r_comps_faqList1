@@ -25,7 +25,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0; }
 
-.faqList1-01_title, .faqList1-01_ans {
+.faqList1-01 li, .faqList1-01_title, .faqList1-01_ans {
   padding: 4px; }
 
 .faqList1-01_title {
@@ -781,24 +781,39 @@ body {
   .col-lg-1 {
     width: 8.33333333%; } }
 
-.faqList1-01 li {
-  padding-bottom: 4px;
-  background-color: #ccc;
-  margin-bottom: 4px; }
-  .faqList1-01 li:last-of-type {
-    margin-bottom: 0; }
+.faqList1-01 {
+  background-color: #2a2a2d; }
+  .faqList1-01 h2 {
+    color: #eee; }
+    .faqList1-01 h2:hover {
+      color: #ccc; }
+    .faqList1-01 h2:hover > .faqList1-01_icon svg {
+      fill: #000; }
+  .faqList1-01 li {
+    background-color: #1c1d22; }
 
 .faqList1-01_title {
-  background-color: #666;
+  border-bottom: 1px dashed #5c5d60; }
+
+.faqList1-01_icon svg {
+  border: 1px solid #000;
+  background-color: #e6e6e6;
+  fill: #be0101; }
+
+.faqList1-01_ans {
+  background-color: #2c2d32; }
+  .faqList1-01_ans p {
+    color: #d5d5d5; }
+
+.faqList1-01_title {
   margin-bottom: 4px;
   cursor: pointer; }
 
 .faqList1-01_icon {
-  margin-left: 4px; }
+  margin-right: 4px; }
   .faqList1-01_icon svg {
     display: inline-block;
-    background-color: #000;
-    fill: #fff;
+    vertical-align: baseline;
     width: 16px;
     height: 16px; }
 

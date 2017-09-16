@@ -1,33 +1,69 @@
 // faqList1-01
 // ==================================================/
+@mixin faqList1-01_theme() {
+  .faqList1-01 {
+    background-color: #2a2a2d;
+    
+    h2 {
+      color: #eee;
+      &:hover {
+        color: #ccc;
+      }
+
+      &:hover > .faqList1-01_icon {
+        svg {
+          fill: #000;
+        }
+      }
+    }
+
+    li {
+      background-color: #1c1d22;
+    }
+  }
+
+  .faqList1-01_title {
+    border-bottom: 1px dashed #5c5d60;
+  }
+
+  .faqList1-01_icon {
+    svg {
+      border: 1px solid #000;
+      background-color: #e6e6e6;
+      fill: #be0101;
+    }
+  }
+
+  .faqList1-01_ans {
+    background-color: #2c2d32;
+
+    p {
+      color: #d5d5d5;
+    }
+  }
+}
+@include faqList1-01_theme();
+
 .faqList1-01 {
   li {
-    padding-bottom: 4px;
-    background-color: #ccc;  
-    margin-bottom: 4px;
-    
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+    @extend %padd--4;    
   }  
 }
 
 .faqList1-01_title {
   @extend %font--bold;
   @extend %padd--4;
-  background-color: #666;
   margin-bottom: 4px; 
   cursor: pointer;
 }
 
 .faqList1-01_icon {
   @extend %display--inline-block;
-  margin-left: 4px;
+  margin-right: 4px;
   
   svg {
     display: inline-block;
-    background-color: #000;
-    fill: #fff;
+    vertical-align: baseline;
     width: 16px;
     height: 16px;
   }

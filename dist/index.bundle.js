@@ -107,9 +107,6 @@ var FaqList1_01 = function () {
     this.iconReveal = opts.iconReveal;
   }
 
-  // prototypes
-
-
   _createClass(FaqList1_01, [{
     key: "init",
     value: function init() {

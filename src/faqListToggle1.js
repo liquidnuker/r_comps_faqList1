@@ -10,7 +10,6 @@ class FaqList1_01 {
     this.iconReveal = opts.iconReveal;
   }
 
-  // prototypes
   init() {
     let list = document.querySelectorAll("." + this.listSelector);
     let listArr = Array.prototype.slice.call(list);
