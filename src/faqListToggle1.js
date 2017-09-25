@@ -22,6 +22,8 @@ class FaqList1_01 {
       i.addEventListener("click", function () {
         self.toggleContent(index, array, iconArr);
       });
+
+      // todo: add keypress
     });
 
     this.toggleAllContents(list, "none", iconArr);
