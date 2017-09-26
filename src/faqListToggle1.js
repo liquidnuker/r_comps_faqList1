@@ -23,7 +23,10 @@ class FaqList1_01 {
         self.toggleContent(index, array, iconArr);
       });
 
-      // todo: add keypress
+      i.addEventListener("keypress", function () {
+       console.log("keypress");
+      });
+
     });
 
     this.toggleAllContents(list, "none", iconArr);
