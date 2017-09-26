@@ -23,10 +23,13 @@ class FaqList1_01 {
         self.toggleContent(index, array, iconArr);
       });
 
-      i.addEventListener("keypress", function () {
-       console.log("keypress");
+      i.addEventListener("keypress", function (event) {
+       if (event.keyCode === 32 || event.keyCode === 13) {
+        // Prevent the default action to stop scrolling when space is pressed
+        event.preventDefault();
+        self.toggleContent(index, array, iconArr);
+        }
       });
-
     });
 
     this.toggleAllContents(list, "none", iconArr);
